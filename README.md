@@ -1,106 +1,163 @@
 # Social Content Engine
 
-**A personal X writing partner + an opt-in, read-only Crypto Twitter radar.**
+**个人 X 写作伙伴 + Crypto Twitter 热点研究 | Your personal X writing partner + Crypto Twitter radar**
 
-[中文说明 / Chinese guide](README.zh-CN.md) · [English setup](docs/SETUP_EN.md) · [中文安装教程](docs/SETUP_ZH.md) · [Security](docs/SECURITY.md)
+[中文](#中文) · [English](#english)
 
-Social Content Engine is an open-source Claude Code skill for turning rough thoughts into thoughtful, source-aware short posts, long posts, and threads **in the author's own voice**. It can also identify a handful of fresh Crypto Twitter (CT) discussion *signals* each day from the official X API or author-provided post data, then help connect those signals to an original argument. It is not a generic marketing calendar or an auto-post bot.
+---
 
-### What it does
+## 中文
 
-- **Distill your own voice:** learn from writing you actually authored and corrections you approve; keep each author's profile separate. Reference creators supply high-level craft, not copied language or borrowed opinions.
-- **Think with you:** question weak logic, expose overlooked mechanisms, surface a defensible angle, and distinguish facts from your conclusions.
-- **Draft in your format:** one concise X post, an eligible longer post, or a coherent thread, in Chinese or English.
-- **Daily CT radar (opt-in):** sample recent **public posts** through the **official X API**, deduplicate and rank by a documented freshness/engagement heuristic, then let Claude verify and interpret a shortlist of signals.
-- **Manual/offline fallback:** rank user-supplied post records without API credentials. No sources? No fabricated trends.
+**把一个想法，写成真正像你自己的 X 内容。**
 
-> **Important:** The radar returns sampled *discussion signals*, **not X's official Trending Topics**, an exhaustive CT ranking, or independently verified news. Posts can be misleading. The agent should verify key factual claims before drafting. Installing the skill does **not** create a scheduled job or log in to your X account.
+Social Content Engine 是一个免费开源的 Claude Code Skill。它能帮你分析个人写作风格、深入思考一个观点、生成短推或 Thread，还可以研究 Crypto Twitter（CT）上值得关注的讨论。
 
-## Quick start: Claude Code
+它不是简单的「AI 润色器」，也不是自动发推机器人。**任何主题都能写，内容由你审核并发布。**
 
-Clone or open this repository as your Claude Code project. The skill is already at `.claude/skills/social-content-engine/SKILL.md` and can be discovered from inside this project. Alternatively, copy that **entire** directory to `~/.claude/skills/social-content-engine/` for use in your other projects. Reopen your Claude Code session.
+### 它能做什么？
 
-Try:
+- **了解你的写作风格：** 从你自己写过的推文和反馈中学习语气、句式、论证习惯，以及你不喜欢的表达。
+- **帮你把观点想透：** 从一句简单的想法开始，寻找更好的切入角度、反驳和证据，而不是替你编造观点。
+- **写短推、长推和 Thread：** 支持中文和英文；也可以修改你已有的草稿。
+- **发现 CT 热点：** 从 X 官方 API 的近期公开帖子中筛选有价值的讨论，保留原帖链接和时间；也可以手动提供帖子数据。
 
-```text
+### 1. 安装
+
+最简单的方式是：用 Claude Code 打开这个 GitHub 仓库，开始一个新会话。Skill 已放在 .claude/skills/social-content-engine/ 文件夹内。
+
+如果你想在自己的其他本地项目里使用，Mac / Linux 可以运行：
+
+~~~bash
+git clone https://github.com/caelynmoss/social-content-engine.git
+mkdir -p ~/.claude/skills
+cp -R social-content-engine/.claude/skills/social-content-engine ~/.claude/skills/
+~~~
+
+Windows 用户可以手动复制整个文件夹到 %USERPROFILE%\.claude\skills\。请确保文件夹里有 SKILL.md，然后重新打开 Claude Code。
+
+[查看详细中文安装教程](docs/SETUP_ZH.md)
+
+### 2. 第一次使用：建立自己的 Voice Profile
+
+最好先准备 8–20 条**自己写过**的推文或文章。参考作者可以提供，但要单独标注，Skill 不会直接复制他们的文案。
+
+~~~text
 /social-content-engine
-Here is my thought: AI agents are getting better at following instructions, but that is not the same as becoming independent issuers.
-Pressure-test the reasoning, then write one short X post in my voice. Don't invent sources.
-```
+这是我自己写的推文：[粘贴]
+这是我喜欢的参考作者：[可选]
+请分析我的写作风格、观点表达、句式和偏好，建立 Voice Profile。
+再根据我的一个想法写条短推，让我确认像不像自己。
+~~~
 
-To build an individual voice profile, paste 8–20 of **your own** past posts (3–5 for a provisional profile), and optionally separately labelled reference writers. Ask the skill to return a calibrated voice card. Private profiles stay on your machine, **not in this repository**.
+没有样本也能立即开始写，但一开始只能使用临时风格。个人档案只有经你允许才会保存到私人位置。
 
-For exact copy/paste setup, commands, daily-job requirements and common failures, see [English setup](docs/SETUP_EN.md) or [中文使用指南](docs/SETUP_ZH.md).
+### 3. 平时怎么写？
 
-## Crypto Twitter radar: two ways to feed it
+~~~text
+/social-content-engine
+我的想法：很多 AI Agent 仍然只是执行人的指令。
+先帮我检验这个观点，再写成一条自然的英文短推。
+不要强行加入热点或编造事实。
+~~~
 
-**A. Official X API (for authorized automation):**
+你也可以要求「帮我写 5 条 Thread」「给我 3 个更好的角度」「改得更像我」。
 
-Configure a **read-only X API Bearer token** privately as `X_API_BEARER_TOKEN` and check API product access, costs and rate limits before running. A token for public-post search does **not** require handing the skill your X username or password, and it does **not** give it access to your personalized Following feed.
+### 4. 每日 Crypto Twitter 热点（可选）
 
-```bash
-python3 .claude/skills/social-content-engine/scripts/ct_radar.py collect \
-  --topics examples/topics.example.json \
-  --output data/private/ct-posts.json
-python3 .claude/skills/social-content-engine/scripts/ct_radar.py rank \
-  --input data/private/ct-posts.json \
-  --output reports/private/radar.json \
-  --markdown reports/private/radar.md
-```
+~~~text
+/social-content-engine
+帮我分析最近 24 小时 Crypto Twitter 上值得关注的讨论。
+重点关注 AI x Crypto、DeFi 和 Meme。
+给出原帖链接、发布时间、讨论价值及可能的写作角度。
+~~~
 
-**B. User-provided data (no API or automation):**
+**自动读取真实 X 帖子需要自行配置具有公开搜索权限的 X API Bearer Token**。这不是用密码登录 X，也无法读取私人 Following 时间线。没有 API 权限时，可以手动提供帖子数据。
 
-Provide a JSON file with publicly sourced posts including real post IDs, ISO UTC `created_at`, text and optional metrics. Then run `rank --input <your-private-file>`. A sample *synthetic* input is in `tests/fixtures/posts.synthetic.json` (do not portray its entries as real trends).
+如果想每天自动生成报告，先完成 API 配置并验证采集成功，再按照 [中文设置教程](docs/SETUP_ZH.md) 和 [每日任务提示词](routines/daily-radar.prompt.md) 创建定时任务。安装 Skill **不会自动启动**任务。
 
-```bash
-python3 .claude/skills/social-content-engine/scripts/ct_radar.py rank \
-  --input tests/fixtures/posts.synthetic.json \
-  --now 2026-11-09T00:00:00Z \
-  --output reports/private/example.json \
-  --markdown reports/private/example.md
-```
+> Radar 展示的是近期帖子里的「讨论信号」，不是 X 官方热搜榜。热门帖子不一定真实，写作前仍要核实。
 
-The Python tool is **read-only** and uses the standard library. It sends only bounded GET requests to `api.x.com`; it does **not** publish or act on X. A missing API key produces a clear error rather than fake data.
+### 更多信息
 
-## Daily scheduling with Claude Code
+[中文安装指南](docs/SETUP_ZH.md) · [安全说明](docs/SECURITY.md) · [参与贡献](CONTRIBUTING.md)
 
-Claude Code has cloud scheduled tasks via `/schedule` in eligible environments. **No job is activated by this repository.** After you have configured authorized X API access *in the scheduled job's cloud environment*, create a private scheduled job based on [routines/daily-radar.prompt.md](routines/daily-radar.prompt.md). For example, ask `/schedule` to run the prompt **daily at 10:00 Asia/Kuala_Lumpur**. Confirm the job's timezone, secret configuration, repository access, and next-run time in the Claude UI.
+基于 [MIT License](LICENSE) 开源。
 
-Do not assume the cloud session has your local environment variables or a logged-in X browser. If the token or paid API access is missing, the job must report `NOT_CONFIGURED` and **must not** claim it collected X posts. Never open a public pull request with private reports. See [automation restrictions](.claude/skills/social-content-engine/references/automation-and-x-policy.md).
+---
 
-## Security and boundaries
+## English
 
-- No X web automation, password harvesting, cookie reuse, rate-limit bypass, automated following/likes, DMs or publishing.
-- Never store API keys, X exports, author writing samples, private voice profiles or real personal data in this public repository.
-- News, engagement and individual posts are not interchangeable; always show source, timestamps and uncertainty.
-- Users review and publish their own posts. All writing remains **draft-only**.
+**Turn a rough idea into an X post that actually sounds like you.**
 
-See [SECURITY.md](docs/SECURITY.md). The project is independently usable and does not require access to any private corporate repository.
+Social Content Engine is a free, open-source Claude Code skill. It helps you develop a personal writing voice, think through an argument, draft short posts or threads, and discover worthwhile Crypto Twitter (CT) discussions.
 
-## Repository layout
+It is more than an AI rewriter, and it is **not** an auto-posting bot. Write about anything; you review and publish the final content.
 
-```text
-.claude/skills/social-content-engine/
-  SKILL.md
-  agents/openai.yaml
-  references/             # voice, critical thinking, sourced CT radar, safe automation
-  scripts/ct_radar.py     # official X API reader and offline scoring
-  assets/                 # synthetic examples and voice card template
-docs/                      # English + Chinese guides and security
-examples/topics.example.json
-routines/daily-radar.prompt.md
-tests/                     # offline, synthetic-data unit tests
-```
+### What can it do?
 
-## Validation
+- **Learn your voice:** use your authentic posts and feedback to understand tone, rhythm, reasoning, and things you prefer to avoid.
+- **Think with you:** examine assumptions, counterarguments and evidence instead of inventing opinions for you.
+- **Draft X content:** short posts, eligible long posts and threads in Chinese or English, or improve existing drafts.
+- **Explore CT signals:** rank recent public X posts from the official API, with dates and source links; manually provided data also works.
 
-```bash
-python3 -m unittest discover -s tests -v
-python3 .claude/skills/social-content-engine/scripts/ct_radar.py --help
-```
+### 1. Install
 
-No live X data is bundled with this project and the CI tests never call X.
+The easiest way: open this GitHub repository as a Claude Code project and start a new session. The skill is already in .claude/skills/social-content-engine/.
 
-## License
+For use across local projects on Mac / Linux:
 
-MIT — see [LICENSE](LICENSE). Contributions and respectful security reports are welcome (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+~~~bash
+git clone https://github.com/caelynmoss/social-content-engine.git
+mkdir -p ~/.claude/skills
+cp -R social-content-engine/.claude/skills/social-content-engine ~/.claude/skills/
+~~~
+
+On Windows, copy the whole folder to %USERPROFILE%\.claude\skills\. Make sure SKILL.md is present, then restart Claude Code.
+
+[Full English installation guide](docs/SETUP_EN.md)
+
+### 2. Build your Voice Profile
+
+Start with 8–20 posts **you actually wrote**. You can provide reference writers separately, but their distinctive writing will not be copied.
+
+~~~text
+/social-content-engine
+Here are posts I wrote: [paste]
+Here are reference writers I admire: [optional]
+Analyze my tone, argument style, sentence rhythm and writing preferences.
+Build my Voice Profile, then draft one calibration post based on my idea.
+~~~
+
+You can still write immediately without samples, using a provisional voice. Saving any personal profile requires your permission.
+
+### 3. Write a post
+
+~~~text
+/social-content-engine
+My thought: Many AI agents still only follow human instructions.
+Challenge my reasoning first, then write one natural short English post in my voice.
+Don't invent facts or force a trending hook.
+~~~
+
+You can also say "Turn this into a five-post thread", "Suggest three stronger angles", or "Rewrite it in my voice".
+
+### 4. Daily Crypto Twitter radar (optional)
+
+~~~text
+/social-content-engine
+Find meaningful Crypto Twitter discussions from the past 24 hours.
+Focus on AI x Crypto, DeFi and memes. Include original post links and dates,
+why each is interesting and possible angles for an original post.
+~~~
+
+**Automated collection of real X posts requires a separately configured X API Bearer Token with permission to search public posts.** This is not a browser login and does not access your private Following feed. You can also provide your own source data.
+
+To receive a daily report, configure and test API access first, then follow the [English setup guide](docs/SETUP_EN.md) and [daily task prompt](routines/daily-radar.prompt.md) to create a schedule. **Installation alone schedules nothing.**
+
+> The radar shows sampled discussion signals, **not** official X Trending Topics. Verify claims before writing or posting.
+
+### More
+
+[English setup](docs/SETUP_EN.md) · [Security](docs/SECURITY.md) · [Contributing](CONTRIBUTING.md)
+
+Open source under the [MIT License](LICENSE).
