@@ -1,0 +1,10 @@
+{
+  "source": "SYNTHETIC_FIXTURE_NOT_LIVE_CT",
+  "posts": [
+    {"id":"1900000000000000001","created_at":"2026-11-08T23:00:00Z","text":"Fictional test: a protocol proposes a new onchain agent charter format.","username":"author_one_example","topics":["AI agents and crypto"],"public_metrics":{"like_count":300,"retweet_count":45,"reply_count":24,"quote_count":12}},
+    {"id":"1900000000000000002","created_at":"2026-11-08T18:00:00Z","text":"Fictional test: how do stablecoin reserve reports address risk?","username":"author_two_example","topics":["DeFi and stablecoins"],"public_metrics":{"like_count":220,"retweet_count":25,"reply_count":90,"quote_count":8}},
+    {"id":"1900000000000000003","created_at":"2026-11-08T22:00:00Z","text":"Fictional test: onchain agent charter design needs public intervention rules.","username":"author_three_example","topics":["AI agents and crypto"],"public_metrics":{"like_count":120,"retweet_count":20,"reply_count":10,"quote_count":4}},
+    {"id":"1900000000000000004","created_at":"2026-11-06T22:00:00Z","text":"Fictional stale topic: an old token liquidity discussion from last week.","username":"author_four_example","topics":["Memecoins and launches"],"public_metrics":{"like_count":9000,"retweet_count":1500,"reply_count":1000,"quote_count":900}},
+    {"id":"1900000000000000001","created_at":"2026-11-08T23:00:00Z","text":"Fictional test: a protocol proposes a new onchain agent charter format.","username":"author_one_example","topics":["AI agents and crypto"],"public_metrics":{"like_count":300,"retweet_count":45,"reply_count":24,"quote_count":12}}
+  ]
+}

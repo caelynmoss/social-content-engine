@@ -1,0 +1,19 @@
+# All credentials, local data, raw X records and personal profiles are PRIVATE.
+.env
+.env.*
+!.env.example
+*.token
+*.secret
+*credentials*.json
+*cookie*.json
+/private/
+data/
+reports/
+voice-profiles/
+**/voice-profiles/
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.DS_Store
+*.log

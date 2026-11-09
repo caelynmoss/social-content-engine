@@ -1,0 +1,11 @@
+{
+  "topics": [
+    {"name": "AI agents and crypto", "query": "(\"AI agent\" OR \"agentic crypto\" OR \"AI x crypto\") -is:retweet"},
+    {"name": "Bitcoin and macro", "query": "(Bitcoin OR BTC) (ETF OR rates OR macro OR flows) -is:retweet"},
+    {"name": "Ethereum and L2", "query": "(Ethereum OR ETH OR rollups OR layer2) (upgrade OR adoption OR fees) -is:retweet"},
+    {"name": "DeFi and stablecoins", "query": "(DeFi OR stablecoin OR USDC) (protocol OR yield OR launch OR regulation) -is:retweet"},
+    {"name": "Memecoins and launches", "query": "(memecoin OR launchpad OR tokenomics) (launch OR market OR liquidity) -is:retweet"},
+    {"name": "Security and regulation", "query": "(crypto OR Web3) (hack OR exploit OR regulation OR policy) -is:retweet"},
+    {"name": "中文 CT", "query": "(加密 OR 链上 OR 发币 OR 稳定币 OR AI代理) lang:zh -is:retweet"}
+  ]
+}
