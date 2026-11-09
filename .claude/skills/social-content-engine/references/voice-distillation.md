@@ -1,5 +1,7 @@
 # Voice distillation — evidence, thought patterns and editorial taste
 
+**Sequence:** identify Account Profile and its winning format first, then distill the author's voice. Distinguish the account's intended positioning/lexicon/stance/red lines from observed sentence-level voice. See `references/account-positioning.md`. Never infer approved company facts, brand positioning, or cross-account publication permission from writing samples.
+
 The author's own final writing and corrections are stronger signals than popularity metrics or reference authors. **Do not assume personality from writing style.** Treat opinions as time-specific and revisable.
 
 ## Onboard from authentic samples

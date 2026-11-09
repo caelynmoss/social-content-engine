@@ -1,7 +1,10 @@
-# Voice Profile — private user-owned template (V2)
+**ACCOUNT WINNING FORMAT:** [read from linked Account Profile FIRST LINE; UNKNOWN until evidence]
+
+# Voice Profile — private user-owned template (account-aware)
 
 Author ID: [user provided]
 Account context: [personal / official / unknown]
+Linked Account Profile: [approved private account-id/path]
 Status: PROVISIONAL
 Own sample count: [confirmed count]
 Own samples reviewed: [indices, private references; do not copy full private posts into shared ZIP]
