@@ -1,47 +1,105 @@
-# Social Content Engine — 中文使用说明
+# Social Content Engine — 中文说明
 
 [返回中英双语 README](README.md) · [详细使用指南](docs/SETUP_ZH.md)
 
 ## 中文
 
-**每天想看 Crypto Twitter 热点？直接问。** Social Content Engine 是免费开源的 Claude Code Skill：研究当天真实发生的 CT 讨论，帮你深挖个人观点，再写成短推、长推或 Thread。
+**从一个简单想法，到真正有自己风格的 X 内容。**
 
-**不需要定时任务，也不会自动运行。** 用户每次主动提问时，Skill 优先尝试当前环境可用的实时网页/X 搜索；已有官方 X API 权限时可选择扩大采样，但不是查询的前置条件。
+Social Content Engine 是一款免费开源的 Claude Code Skill，包含三个核心能力：**个人风格蒸馏、观点思考与内容创作、按需 Crypto Twitter 热点研究**。不只是把一句话润色得更漂亮，而是帮助你找到值得表达的观点、理清论证，再用自己的语言写出来。
 
-### 能做什么？
+### 1. Voice Distillation｜个人风格蒸馏
 
-- **今日 CT 热点：** 查找 BTC、ETH、DeFi、稳定币、Memecoin、AI x Crypto、安全事件、链上数据与相关政策在 X 上真实发生的讨论。
-- **有证据的报告：** 5–10 个热点（不足就少给），包含 X 原帖链接、发布时间、讨论依据、哪些内容仍需核实、为什么值得关注和原创写作角度。
-- **个人风格蒸馏：** 根据你自己的推文学习表达语气和论证习惯；同行作者只能提供写作技巧参考。
-- **短推与 Thread：** 从一句话观点开始，先找逻辑漏洞和独特角度，再写成你的风格。
+很多 AI 写出的推文看起来都很像。这个功能希望解决的是：**让内容更像你，而不是更像 AI。**
 
-### 安装
+首次使用时，建议提供 8–20 条自己写过的推文或文章。Skill 会从真实样本中分析你习惯的开头和收尾、语气、句子长短、论证方式、用词、幽默感以及不喜欢的表达，并整理成一份 **Voice Profile**。样本不足时也能先生成初步版本。
 
-在 Claude Code 打开本仓库，开始新会话即可。Skill 在 `.claude/skills/social-content-engine/`。如果要用于其他本地项目，可运行：
+你也可以提供喜欢的同行或参考作者，但 Skill 只借鉴他们的结构、节奏和论证技巧，不会照搬他们的独特措辞、经历或观点。
 
-```bash
+~~~text
+/social-content-engine
+以下是我自己写的推文：[粘贴 8–20 条]
+以下是参考作者的内容：[可选，请单独标注]
+
+请分析我的写作习惯、语气、观点表达、句式和内容偏好，
+建立 Voice Profile，然后用我的一个观点写一条校准短推。
+不要复制参考作者的文字。
+~~~
+
+没有历史样本，也可以先生成内容，但会采用临时风格。你的个人档案不会自动上传公共仓库；持久保存需要你的明确同意。
+
+### 2. Thinking Partner + Content Creation｜观点思考与内容创作
+
+**只要有一个想法，不需要先写好完整稿件。** 可以输入一句话、几条零散观点、一段语音转写、新闻链接或已有草稿。
+
+Skill 会根据需要：
+- 找出你真正想说的判断，以及值得讨论的切入点；
+- 分析逻辑漏洞、可能的反驳与现实意义；
+- 在相关时查证最新新闻、数据及原始来源；
+- 保留你的立场和语气，形成自然且有内容的原创表达。
+
+支持的形式：
+
+| 形式 | 用途 |
+| --- | --- |
+| Short Post | 单条短推，简洁直接 |
+| Long Post | 更完整的观点分析；较长的单条 X 帖子需账号具备相应权限 |
+| Thread | 把一套论证拆成有递进关系的多条推文 |
+| Rewrite | 保留原意，把草稿改得更像本人 |
+| Angle Exploration | 先找出不同角度、检验观点，再决定写什么 |
+
+**一句话变短推：**
+
+~~~text
+/social-content-engine
+我的想法：很多 AI Agent 仍然只是执行人的指令，
+但这不等于真正的经济自主权。
+
+帮我找到最有意思的切入角度，指出逻辑上的薄弱处，
+再按我的个人风格写成一条英文短推。
+不要营销腔，也不要替我编造事实。
+~~~
+
+**把想法写成 Thread：**
+
+~~~text
+/social-content-engine
+我想讨论：[粘贴几个观点]
+先帮我梳理逻辑、寻找反驳、必要时查证事实，
+最后写成 5 条英文 Thread。每条都要推进论证，别重复。
+~~~
+
+如果输出不够像你，直接反馈「这不是我的观点」「太像 AI」「我不会这样开头」。Skill 会先修改当前内容；你同意后才会把长期偏好更新到 Voice Profile。**主题不限 Crypto：AI、创业、市场、产品、技术、生活观察都可以。**
+
+### 3. Crypto Twitter Radar｜当天 CT 热点
+
+想知道今天 CT 正在讨论什么，**主动问一次就够了**。不需要配置定时任务，也不会自动运行。
+
+~~~text
+/social-content-engine
+今天 Crypto Twitter 有什么热点？
+只要今天 X 上真实有人讨论的 Crypto 内容，给我 5–10 个重点。
+每个附 X 原帖、发布时间、争论内容、为什么重要、
+哪些信息尚未核实，以及一个原创写作角度。
+~~~
+
+Skill 首先尝试当前环境可用的合法实时 X/网页搜索，寻找 BTC、ETH、DeFi、Meme、AI x Crypto、链上活动和安全事件等真实 CT 讨论。**有 X 原帖才算 CT 讨论信号**；只有新闻网站报道不能冒充热点。如果来源不足，结果可能少于 5 个，并明确说明局限。这不是 X 官方 Trending Topics 排名。
+
+已有合法 X API 公开搜索权限时，可选用只读 API 扩大采样，但这不是日常提问的前置条件。Skill 不会索取 X 密码或 Cookie，不自动登录或发推。
+
+### 4. 安装与开始
+
+最简单的方法：用 Claude Code 打开这个仓库。Skill 已在 .claude/skills/social-content-engine/，开始新会话即可使用 /social-content-engine。
+
+若要在其他本地项目中使用，Mac / Linux 可以执行：
+
+~~~bash
 git clone https://github.com/caelynmoss/social-content-engine.git
 mkdir -p ~/.claude/skills
 cp -R social-content-engine/.claude/skills/social-content-engine ~/.claude/skills/
-```
+~~~
 
-### 每天直接问
+Windows 可把同一文件夹复制到 %USERPROFILE%\.claude\skills\。确保文件夹内有 SKILL.md，并重新打开 Claude Code。
 
-```text
-/social-content-engine
-今天 Crypto Twitter 有什么热点？
-只要 CT 上真实有人讨论的 Crypto 话题，给我 5–10 个重点。
-每个要有 X 原帖链接、发布时间、讨论依据、事实核查和可写的原创角度。
-```
-
-随后可以继续问：
-
-```text
-从第 2 个热点里选一个最有意思的角度，帮我写一条英文短推，
-不要照抄原帖，保留我的语气。
-```
-
-**关于来源：** 公开搜索未必能覆盖所有 X 帖子。没有可核实的当日 X 原帖时，Skill 会如实说明，而不是拿普通新闻代替今天 CT 正在讨论的内容。“热点”指采样到的讨论信号，并非 X 官方 Trending Topics 排名。
-
-可选的 X 官方 API 采集命令见 [中文使用指南](docs/SETUP_ZH.md)，不会自动启动、自动登录或发推。
+[中文详细使用指南](docs/SETUP_ZH.md) · [安全与隐私](docs/SECURITY.md) · [参与贡献](CONTRIBUTING.md)
 
