@@ -25,4 +25,4 @@ Do not store real/private account profiles, performance exports or approved docu
 
 ## Reference: perspective before topic
 
-A creator can write across multiple subjects if the account's underlying lens stays coherent. For inspiration on the value of a point of view over a rigid niche, read Dan Koe's published essay `https://thedankoe.com/letters/you-dont-need-a-niche-you-need-a-point-of-view/`. This is high-level strategy only, not a source for the specific X post shared by a user or permission to copy a contemporary creator's distinct language.
+A creator can write across multiple subjects if the account's underlying lens stays coherent. A user may supply inspiration from a reference creator (for example, a Dan Koe X post). Treat it as a separate, user-supplied peer reference; verify the original source where possible, extract only general editorial techniques and never present an unverified quote or imitate distinctive expression.
