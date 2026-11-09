@@ -1,6 +1,6 @@
 # Security and responsible use
 
-This is a **public, read-only research and draft-writing tool**. There is no account login, browser automation, credential extraction, scheduled publishing or X write API. Automated daily research is opt-in and requires a legitimate official X API token in the private runtime environment.
+This is a **public, read-only, user-triggered research and draft-writing tool**. No browser automation, logged-in X scraping, recurring/background radar, scheduled publication or X write API. Research first tries authorized public live X search; official X API is only an optional manually invoked supplement.
 
 Do not file issues containing access tokens, private author writing, profile cards, personal messages, session cookies or data exports. If you accidentally expose a credential, revoke it immediately with the provider and rotate it.
 

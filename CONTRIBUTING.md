@@ -7,6 +7,6 @@ Thanks for improving Social Content Engine!
 - Prefer tests that use synthetic fixtures and mock network calls. Never make CI depend on a live X account or X API key.
 - Update both English and Chinese instructions when the workflow changes.
 - Run `python3 -m unittest discover -s tests -v` before proposing changes.
-- Discuss new API costs, authentication and recurring jobs before adding them; never silently activate tasks.
+- Keep CT radar strictly on-demand and user-triggered. Discuss API costs and authentication before adding them; never introduce scheduled or background collection.
 
 Issues and pull requests are welcome. Follow the repository's MIT License.
