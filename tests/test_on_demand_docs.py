@@ -15,4 +15,4 @@ class OnDemandDocsTests(unittest.TestCase):
         t=(SKILL/'SKILL.md').read_text(encoding='utf8')
         self.assertIn('Live discovery order',t)
         self.assertIn('Never replace X-post evidence with generic news articles',t)
-        self.assertIn('radar runs only when requested',t)
+        self.assertIn('Only run when the user asks',t)

@@ -61,8 +61,8 @@ class RadarTests(unittest.TestCase):
 
     def test_attribution_is_not_thought_to_be_truth(self):
         text = (ROOT / 'README.md').read_text(encoding='utf-8')
-        self.assertIn('not X\'s official Trending Topics', text)
-        self.assertIn('No X web automation', text)
+        self.assertIn('X Trending Topics', text)
+        self.assertIn('never performs browser login', text)
 
     def test_skill_has_radar_and_writer_modes(self):
         skill = (ROOT / '.claude/skills/social-content-engine/SKILL.md').read_text(encoding='utf-8')
