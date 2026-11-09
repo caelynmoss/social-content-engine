@@ -32,6 +32,7 @@ Social Content Engine 是一款免费开源的 Claude Code Skill，包含三个�
 如果有个人号和官方号，也帮我定义原创内容和引用的流向。
 样本不足请标明，不要替我编造定位、指标或已批准事实。
 ~~~
+
 ### 1. Voice Distillation｜个人风格蒸馏
 
 很多 AI 写出的推文看起来都很像。这个功能希望解决的是：**让内容更像你，而不是更像 AI。**
@@ -66,11 +67,12 @@ Skill 会根据需要：
 
 | 形式 | 用途 |
 | --- | --- |
-| Short Post | 单条短推，简洁直接 |
-| Long Post | 更完整的观点分析；较长的单条 X 帖子需账号具备相应权限 |
-| Thread | 把一套论证拆成有递进关系的多条推文 |
-| Rewrite | 保留原意，把草稿改得更像本人 |
-| Angle Exploration | 先找出不同角度、检验观点，再决定写什么 |
+| **Article（文章）** | 完整的 X 长文章：独立标题、章节结构、深入论证、案例与来源；适合研究、行业分析和系统性观点 |
+| Long Post（长帖） | 一条较长的 X 帖子，承载完整观点，但不采用独立 Article 的文章结构 |
+| Short Post（短推） | 单条简洁观察或判断 |
+| Thread（推文串） | 多条推文逐步推进同一个论证，每条都有新内容 |
+| Rewrite（改写） | 保留原意，把现有草稿改得更像本人 |
+| Angle Exploration（角度探索） | 先找出不同角度、检验观点，再决定写什么 |
 
 **一句话变短推：**
 
@@ -83,6 +85,24 @@ Skill 会根据需要：
 再按我的个人风格写成一条英文短推。
 不要营销腔，也不要替我编造事实。
 ~~~
+
+**写一篇完整 Article：**
+
+~~~text
+/social-content-engine
+我想写一篇英文 X Article，主题是：[你的观点 / 研究方向]。
+先根据我的 Account Profile、历史格式表现与目标受众，确认 Article 是否适合这次内容。
+使用我的 Voice Profile 来写，而不是套用通用营销文章格式。
+
+请先帮我明确核心论点、找出证据不足的地方、提出可能的反驳，
+再写出完整的文章：有标题、自然的章节结构、深入分析、必要的案例和来源，
+以及真正推进观点的结尾。不要为了凑字数重复论述。
+
+不要把 Article 强行压缩为 Long Post 或 Thread，也不要默认 300–1200 字符。
+涉及产品数据或合作事实时，只使用我账号 approved-source register 中确认过的资料。
+~~~
+
+**Article、Long Post、Thread 是三种不同形式。** 选择哪一种，要看账号本身的历史表现、这次内容的目标和论证深度。**Article 没有统一的默认字数限制**；篇幅由账号实际数据和内容需求决定。正式发布前，请确认账号具有对应的 X Article 权限。
 
 **把想法写成 Thread：**
 
@@ -185,9 +205,10 @@ The skill can:
 
 | Format | What it's for |
 | --- | --- |
-| Short Post | One concise X post |
-| Long Post | Deeper analysis, subject to X account eligibility for longer single posts |
-| Thread | A connected sequence of posts that develop one argument |
+| **Article** | A full native X article with a title, sections, sustained argument, examples and sources; suited to deep research and analysis |
+| Long Post | One longer X post that develops a point without becoming a standalone article |
+| Short Post | One concise observation or argument |
+| Thread | A sequence of posts that progressively develops an argument, with a distinct contribution in each post |
 | Rewrite | Improve a draft without changing what you mean |
 | Angle Exploration | Compare distinct angles before you start writing |
 
@@ -202,6 +223,26 @@ Find the most interesting angle, challenge weak assumptions,
 then write one short English X post in my voice.
 No marketing filler or invented facts.
 ~~~
+
+**Write a full Article:**
+
+~~~text
+/social-content-engine
+I want to write an English X Article about: [your thesis or research topic].
+First check my Account Profile, audience and historical format performance
+to decide whether Article is the right choice for this piece.
+Apply my Voice Profile rather than a generic marketing-blog voice.
+
+Clarify the thesis, identify evidence gaps and fair counterarguments,
+then draft a complete Article with a compelling title, natural sections,
+substantive analysis, relevant examples, source notes and a meaningful conclusion.
+Don't add filler just to make it longer.
+
+Do not force this into a Long Post or Thread, or impose a default 300–1200 character limit.
+For company or product claims, use only approved sources from my account's source register.
+~~~
+
+**Article, Long Post and Thread are distinct formats.** Choose based on this account's real performance, the communication goal and the depth of reasoning—not platform defaults. An **Article has no arbitrary default character limit** in this Skill; adapt length to the evidence and the work. Verify native X Article publishing eligibility for the account.
 
 **One argument → a thread:**
 
