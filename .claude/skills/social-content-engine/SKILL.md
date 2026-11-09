@@ -51,6 +51,7 @@ Interpret `BUILD_VOICE` as `VOICE_DISTILL`, `IDEA_TO_POST` as `QUICK_DRAFT`, `SH
 
 ## Crypto Twitter Radar — on-demand, X discussions only
 
+- **Only run when the user asks.** Never create a scheduled task or perform background CT monitoring.
 - Trigger on a simple user request such as **"今天 CT 有什么热点？"** or **"Give me today's Crypto Twitter hot topics"**. Do the research **immediately in this conversation**, without requesting an onboarding form, suggesting a background schedule, or first demanding an X API token. See `references/crypto-twitter-radar.md`.
 - **Live discovery order:** (1) Use available authorized current web/search tools that can find public X posts (including X URLs and source timestamps); (2) if an official X API Bearer Token is *already configured*, optionally run `scripts/ct_radar.py collect` and `rank` for broader public-post sampling; (3) if no live X search is accessible, use explicitly user-supplied public X posts or report the inability to verify current CT conversations. Do not substitute generic news articles for X posts.
 - **X evidence is mandatory:** Never replace X-post evidence with generic news articles. If public posts cannot be verified, report the limitation instead of inventing trends.
