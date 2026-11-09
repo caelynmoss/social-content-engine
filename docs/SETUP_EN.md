@@ -4,6 +4,13 @@
 
 Open the GitHub repository in Claude Code; the Skill is at `.claude/skills/social-content-engine/SKILL.md`. To use it across your local projects, copy the entire folder into `~/.claude/skills/social-content-engine/` (Windows: `%USERPROFILE%\.claude\skills\social-content-engine\`) and restart Claude Code.
 
+## Account alignment and evidence-led formats
+
+Build a separate private Account Profile first: audience promise, editorial lens, explicit stances, vocabulary, red lines, source approval registry and optional linked-account routing. Put the account's actual winning format on the **first line**, with sample size, window and performance metric. ARTICLE, LONG_POST, SHORT_POST and THREAD are all valid; weak evidence means UNKNOWN, not a guessed winner.
+
+An ARTICLE is a full long-form draft with sections, reasoning and sources. It is distinct from a thread or a long single post. Confirm native publishing eligibility separately. Optional personal/official routing helps prevent duplicative reposts: opinions and stories can originate personally; approved tutorials, data and partnerships should originate officially.
+
+Blank private templates are under the Skill's assets/ directory. A local CSV format comparison is available via scripts/format_audit.py --help. Keep authorized source records and account data out of public GitHub.
 ## 2. Ask for Crypto Twitter hot topics today
 
 ```text

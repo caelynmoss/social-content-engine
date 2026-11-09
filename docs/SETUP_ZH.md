@@ -4,6 +4,15 @@
 
 Claude Code 中直接打开本仓库，Skill 位于 `.claude/skills/social-content-engine/SKILL.md`。也可以将整个 `social-content-engine` 文件夹复制到个人 `~/.claude/skills/` 目录（Windows：`%USERPROFILE%\.claude\skills\`），然后重开 Claude Code 会话。
 
+## 账号定位和格式选择先行
+
+先根据你本人授权的信息建立 Account Profile：账号定位、受众、选题视角、词汇、明确立场、红线和 approved sources 的私人位置。把真实历史数据中**最有效的格式**（Article、Long Post、Short Post、Thread）写在档案第一行，注明样本量、时间范围和比较指标。证据不足就填 UNKNOWN，不要猜。
+
+新 Skill 支持 ARTICLE 文章：标题、章节、论证、引证和结论，长度跟随账号数据与主题需要，不设 300–1200 字符上限。请先确认 X 账号是否具有对应发布权限。
+
+有个人号与官方号时，可选将观点故事放在个人号首发、官方号引用扩展；教程、验证数据、合作和公告放在官方号首发。不要把相同内容机械地两边重复发布。
+
+空白模板在 Skill 的 assets/account-profile-template.md、assets/approved-source-register-template.md 和 assets/format-performance-template.md。真实已填写资料应保存在私人位置。离线对比格式可查看 scripts/format_audit.py --help。
 ## 二、每天按需查询 CT 热点
 
 ```text

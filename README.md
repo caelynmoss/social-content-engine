@@ -14,6 +14,24 @@
 
 Social Content Engine 是一款免费开源的 Claude Code Skill，包含三个核心能力：**个人风格蒸馏、观点思考与内容创作、按需 Crypto Twitter 热点研究**。不只是把一句话润色得更漂亮，而是帮助你找到值得表达的观点、理清论证，再用自己的语言写出来。
 
+### 0. Account Alignment｜先有账号定位，再有单条内容的角度
+
+**内容从账号定位开始，不从格式模板开始。** Account Profile 是一个账号的编辑章程，记录它面向谁、提供什么独特价值、核心观点、确认的立场、词汇偏好和不能碰的红线；Voice Profile 才负责这个作者如何表达。两份档案分别维护。
+
+**Account Profile 第一行先回答：这个账号什么格式赢？** 使用账号自己的历史数据比较 Article、Long Post、Short Post、Thread，明确统计区间、样本量、指标和中位数。不同账号、不同内容类别可以有不同答案。证据不足就写 UNKNOWN / TEST NEEDED，不默认短推或 Thread。Article 是完整长文章格式，有标题、章节和论证，不等于把一条推文拉长；发布需确认账号权限。
+
+企业或项目账号可通过独立的 approved-source register 指向获准公开的官方资料、核验日期、负责人和适用范围。没有经过批准的来源就不声称功能、合作、数据和时间已经确认。私人账号档案和来源文件不会自动上传到这个 Public 仓库。
+
+如果用户同时管理个人号和官方号，可按需设置内容源头：**原创判断与真实故事从个人号首发，官方号注明来源并展开；教程、产品数据、合作和公告由官方号首发，个人号只在有新的独立观点时跟进**。这是可配置的建议，不是强制所有人都拥有两个账号。
+
+~~~text
+/social-content-engine
+先帮我做 Account Alignment：明确账号受众、核心视角、词汇、立场和红线。
+参考我授权提供的历史内容表现，先判断什么格式在这个账号有效。
+这里是获准使用的官方事实来源：[URL 或私有文件路径]
+如果有个人号和官方号，也帮我定义原创内容和引用的流向。
+样本不足请标明，不要替我编造定位、指标或已批准事实。
+~~~
 ### 1. Voice Distillation｜个人风格蒸馏
 
 很多 AI 写出的推文看起来都很像。这个功能希望解决的是：**让内容更像你，而不是更像 AI。**
@@ -117,6 +135,24 @@ Windows 可把同一文件夹复制到 %USERPROFILE%\.claude\skills\。确保文
 
 Social Content Engine is a free, open-source Claude Code skill with three core abilities: **personal voice distillation, thinking and content creation, and on-demand Crypto Twitter research**. It doesn't just polish sentences; it helps you find an argument worth making and express it in your own words.
 
+### 0. Account Alignment | Position first, angle second
+
+**Start with the account's editorial identity, not a platform template.** Keep an Account Profile for audience promise, core lens, explicit stances, vocabulary, red lines and approved facts, linked to a separate Voice Profile for how the author writes.
+
+**First line of the Account Profile: What format wins here?** Compare this account's original Articles, long single posts, short posts and threads using its own measured results, sample sizes, dates, medians and goals. Do not presume short posts or threads win. An Article is a first-class long-form draft with sections and evidence, not a padded tweet. Eligibility to publish native X Articles must be checked. If the data is weak, record UNKNOWN / TEST NEEDED.
+
+Approved company facts need a location: a private approved-source register with real authorized URLs or file paths, verification dates, signoff and permitted claim scope. Never treat an unapproved product claim as a fact. Personal profiles and private sources remain outside the public repository.
+
+If personal and official accounts are linked, an optional routing model is: original views and firsthand stories start with the person, while the official account can cite and expand; verified tutorials, data, releases and partnerships originate with the official account, with personal follow-up only when it adds a distinct view. This is configurable, never a forced workflow or auto-post.
+
+~~~text
+/social-content-engine
+Align this account's positioning before drafting: audience, point of view, vocabulary,
+confirmed stances and red lines. Compare my authorized past results by format.
+Place the winning format (or UNKNOWN) on line one of the Account Profile.
+Here are my approved organizational sources: [URLs or private paths].
+If I manage linked personal/official accounts, define who originates which content.
+~~~
 ### 1. Voice Distillation
 
 AI-written posts often sound the same. This feature aims to make your writing sound **more like you, not more like AI**.
