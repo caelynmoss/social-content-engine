@@ -192,7 +192,7 @@ why it matters, unverified claims and an original writing angle.
 
 The skill tries available authorized live X/web search first, across BTC, ETH, DeFi, memes, AI x Crypto, onchain activity, security and other crypto discussions. **A real X source is required**; generic news coverage alone does not prove a Crypto Twitter hotspot. When access is limited, the skill reports fewer topics rather than inventing posts. This is **not X's official Trending Topics** list (not X Trending Topics rankings).
 
-A read-only official X API is optional for people who already have permitted public search access. No password collection, cookies, scheduled data collection, browser login or auto-posting.
+A read-only official X API is optional for people who already have permitted public search access. The skill never performs browser login, collects passwords or cookies, runs scheduled data collection, or auto-posts.
 
 ### 4. Install and get started
 
