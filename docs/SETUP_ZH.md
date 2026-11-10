@@ -1,57 +1,44 @@
-# 中文安装与使用指南
+# 中文安装与使用指南 — V5
 
-## 一、安装 Skill
+## 1. 安装
 
-Claude Code 中直接打开本仓库，Skill 位于 `.claude/skills/social-content-engine/SKILL.md`。也可以将整个 `social-content-engine` 文件夹复制到个人 `~/.claude/skills/` 目录（Windows：`%USERPROFILE%\.claude\skills\`），然后重开 Claude Code 会话。
+在 Claude Code 打开本仓库：`.claude/skills/social-content-engine/SKILL.md` 已存在。或将整个 `social-content-engine` Skill 文件夹复制到 `~/.claude/skills/social-content-engine/`（Windows：`%USERPROFILE%\.claude\skills\social-content-engine\`），重新打开会话后输入 `/social-content-engine`。
 
-## 账号定位和格式选择先行
+## 2. 建立账号与个人风格（可选但建议）
 
-先根据你本人授权的信息建立 Account Profile：账号定位、受众、选题视角、词汇、明确立场、红线和 approved sources 的私人位置。把真实历史数据中**最有效的格式**（Article、Long Post、Short Post、Thread）写在档案第一行，注明样本量、时间范围和比较指标。证据不足就填 UNKNOWN，不要猜。
+Account Profile 决定账号定位、受众、词汇、立场、红线、批准的官方事实来源和什么格式真正有效；Voice Profile 决定作者怎样表达。提供自己写过的 8–20 条文章/推文、账号内容表现（如有）与修改反馈。没有充分数据时将有效格式标为 UNKNOWN，不默认短推。Article 是完整长文章，而不是 Long Post 或 Thread。所有私有档案只有明确授权才保存。
 
-新 Skill 支持 ARTICLE 文章：标题、章节、论证、引证和结论，长度跟随账号数据与主题需要，不设 300–1200 字符上限。请先确认 X 账号是否具有对应发布权限。
-
-有个人号与官方号时，可选将观点故事放在个人号首发、官方号引用扩展；教程、验证数据、合作和公告放在官方号首发。不要把相同内容机械地两边重复发布。
-
-空白模板在 Skill 的 assets/account-profile-template.md、assets/approved-source-register-template.md 和 assets/format-performance-template.md。真实已填写资料应保存在私人位置。离线对比格式可查看 scripts/format_audit.py --help。
-## 二、每天按需查询 CT 热点
+## 3. 从一句话开始写深
 
 ```text
 /social-content-engine
-今天 Crypto Twitter 有什么热点？
-请只分析今天 CT 上真正讨论的 Crypto 话题，给出 5–10 个重点。
-每条要有 X 原帖链接、原帖时间、不同账号的讨论依据、
-为什么重要、消息是否核实、我能写的独立角度。
+我的观点是：[粘贴一两句话]。
+先用 Idea Expansion 找 2–3 个真正不同的机制、后果、反例和证据空缺，
+不要把原句机械扩写。推荐一个方向，同时给我一份初步草稿。
 ```
 
-只要**当天自己输入一次**即可，完全不需要自动启动、后台运行或定时配置。Skill 会首先尝试现有的合法实时搜索工具。若无法访问可验证的 X 原帖，它会如实说明，不会用普通新闻冒充 CT 热点。
+如果明确只要成稿，Skill 应直接交付，不强制先选模式。若你想选择，五种表达方式分别是：PROFESSIONAL（专业分析）、CONVERSATIONAL（轻松交流）、RESEARCH_DRIVEN（研究驱动）、OPINIONATED（鲜明观点）、BUILDERS_NOTES（实践笔记）。选择只作用于当前稿件，不修改私人档案。
 
-“今天”指用户当地时间从 00:00 到查询时刻；“过去 24 小时”是滚动窗口。Skill 应显示使用的日期、时区、截止时间。多个独立 X 作者的发帖是比单一帖子更强的讨论证据。
+## 4. Research 可独立选择
 
-## 三、将热点写成个人推文
+- R0：基于你的素材推理，不做额外广泛研究，但重要事实仍要核实或限定。
+- R1：在可用、授权的研究工具下，尝试核实 1–3 项最有价值的证据。
+- R2：深度查证原始资料、时间、对立证据、数据口径和重要机制。
 
-```text
-/social-content-engine
-针对第 2 个热点，先帮我找论证漏洞和更特别的角度，
-然后根据我的风格写一条英文短推，不要复制其他人的句子。
-```
+Research 深度、表达方式和 Article/Long Post/Short Post/Thread 格式是三个独立选择。例如：「CONVERSATIONAL + R2 + ARTICLE」。Research 能否执行取决于当次 Claude Code 工具、访问权限和源数据。不能访问时，Skill 必须说明并保持事实表述谨慎；不得伪造论文、统计或来源链接。
 
-可提供 8–20 条自己写过的推文，帮助建立 Voice Profile。没有历史内容也可以先用临时风格。个人档案的持久保存需要本人明确许可。
+## 5. 信息差和 Evidence Ledger
 
-## 四、官方 X API（可选，仅手动使用）
+要求：`帮我找一个足以改变读者判断、CT 上不一定被讨论清楚的具体事实或机制。先找原始资料，把已经证实、来源声称、尚未证实和作者推论分开，再给出原创角度。` 只有实际采样 X 讨论，才可断言「CT 没人注意」。Skill 会使用 `references/information-gain.md` 的 Information Gain Card。Article 可用多个有证据的卡片深化论点，而非凑字数。
 
-已有公开 Recent Search 权限和额度时，可以把 `X_API_BEARER_TOKEN` 安全配置在自己的私有运行环境中，手动执行：
+## 6. 写得更像本人 + Editorial Memory
 
-```bash
-python3 .claude/skills/social-content-engine/scripts/ct_radar.py collect \
-  --topics examples/topics.example.json --hours 24 --max-queries 6 --per-topic 10 \
-  --output data/private/ct-posts.json
-python3 .claude/skills/social-content-engine/scripts/ct_radar.py rank \
-  --input data/private/ct-posts.json \
-  --output reports/private/radar.json --markdown reports/private/radar.md
-```
+`这个输出不太像我：请诊断是观点浅、缺乏细节、证据不足还是表达不自然，再按我的历史最终稿调整；不要自己编故事。` 若你提供最终修改稿，Skill 可以提出一条可检验的长期编辑偏好（PROPOSED）；**未经你明确同意，不得保存到私人 Editorial Memory**，更不得写入 GitHub。
 
-但**它不是普通 CT 热点查询的前置条件**，没有 API 也可通过当前实时搜索工具查找公开 X 帖子，或手动提供真实来源。测试用的虚构数据不能作为实时 CT 证据。
+## 7. CT Radar（手动查询）
 
-## 五、注意事项
+`/social-content-engine 今天 CT 上真正讨论的 Crypto 热点有哪些？请提供可核实的原帖链接、时间和讨论依据。` 只在询问时研究，不自动运行。可选使用已授权的 X 公开搜索 API，或当前可用的合法实时检索；若不能验证 X 原帖，不用新闻网站凑热点。
 
-无法验证原帖就要说明，不填充虚构热点；X 官方 API 可能涉及费用、限速和权限。绝不索取 X 密码、Cookie，不执行自动网页登录、定时任务、自动发推或其他账号操作。请将个人 Voice Profile、API 密钥和 X 原始数据保存在私人空间。
+## 8. 安全与真实性
+
+永不自动发推、回复、转发、关注或登录 X，不收集密码与 Cookie。个人文章、数据、来源批准表和密钥不进入公开仓库。使用 X API 时自行核对费用和授权。未经核实的数据不得被写成事实。详见 `docs/SECURITY.md`。

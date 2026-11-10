@@ -42,3 +42,13 @@ Correct behavior: Say current sources couldn't be verified; offer an evergreen d
 Input: "If an agent issues a token, it automatically makes the token safer."
 
 Correct behavior: Distinguish observable rule execution from reduced risk. An autonomous issuer can still fail or implement harmful incentives. Offer a narrower, defensible takeaway rather than polishing a guarantee.
+
+## V5 behavior probes (SYNTHETIC — not real CT research)
+
+**Seed:** “Agents aren't autonomous.” → Provide up to three distinct suggested mechanisms (decision authority, accountability, incentive rights), strongest objection and a possible evidence check. Never treat hypotheses as confirmed facts; for a requested post supply a draft in the same turn.
+
+**Style request:** “Make it conversational but source-heavy.” → Use CONVERSATIONAL with R2 if authorized; do not assume Research-Driven prose mode is required. Do not claim to have verified facts if no research tools were used.
+
+**Research request:** “Find an under-discussed contract privilege.” → Identify a testable access-control question, seek original contract or docs, and avoid “CT isn't talking about it” without X sampling. If missing evidence, output UNVERIFIED instead of inventing a fact.
+
+**Humanity feedback:** “This doesn't sound like me; I never say ‘Not X but Y’.” → Remove the unwanted pattern and identify the unsupported idea/voice issue. Do not fabricate personal history; suggest an editorial rule but do not save it without consent.

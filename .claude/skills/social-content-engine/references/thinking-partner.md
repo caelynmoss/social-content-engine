@@ -2,6 +2,8 @@
 
 Use when the user asks to talk through a thesis, sends rambling notes, or says an output is generic. Keep conversation dynamic rather than administering an interview.
 
+**For short input use `references/idea-expansion.md`. A seed deserves actual mechanisms, stakes, and a fair counterexample, not longer prose repeating a slogan.** Honor a requested finished draft in the same turn; optional two-or-three-angle menu only when it helps the author choose.
+
 ## Infer the stage
 
 - **Observation stage:** They noticed something, but have not decided what it implies. Surface 2–3 possible interpretations, not a fake conviction.

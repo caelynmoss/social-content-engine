@@ -32,7 +32,16 @@ Storage permission: NOT GRANTED unless user explicitly authorizes
 - Preferred topics/audiences (these are NOT permanent opinions):
 - Hard boundaries and topics they don't want forced:
 
-## 4. Calibration
+## 4. Humanity Fingerprint (supported by OWN writing or explicit edits, not inferred personality)
+- What makes the author curious or skeptical (supported sample IDs):
+- Real concrete details they choose to start from:
+- How they express ambiguity, confidence, a change of mind:
+- Natural humor, asymmetry and spoken edges:
+- Repeated AI formulations the author edits out:
+- Evidence density they actually prefer in each content category:
+- Real experiences supplied with permission (private IDs only; do not fabricate):
+
+## 5. Calibration
 - Confidence: PROVISIONAL / SUPPORTED / CALIBRATED
 - Sample-based observations, with supporting own sample IDs:
 - Held-out own posts (private IDs):
@@ -40,10 +49,10 @@ Storage permission: NOT GRANTED unless user explicitly authorizes
 - Proposed new preference rule (not yet approved):
 - Confirmed feedback rules with dates:
 
-## 5. Transfer safety
+## 6. Transfer safety
 - What is definitely the AUTHOR's stated view:
 - What is external evidence:
 - What is only a suggested editorial angle:
 - What peer techniques can be used at high level:
 
-Never place this filled-in file into the team-distributed Skill archive without explicit permission.
+Never place this filled-in file into the public or shared Skill archive without explicit permission.

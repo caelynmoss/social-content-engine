@@ -2,6 +2,8 @@
 
 **News is optional supporting evidence, not the purpose of every post.** The author sets the thesis.
 
+**For sourced depth use `references/research-depth.md` and the Information Gain Card. R0/R1/R2 are research effort settings independent of the prose mode; never confuse a Research-Driven style with completed research.**
+
 ## Research trigger
 
 - Must attempt verification when the user asks "latest/today/this week", supplies a link with factual claims, or relies on current news, prices, product features, regulations, people or figures.

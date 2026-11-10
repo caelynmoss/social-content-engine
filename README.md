@@ -1,290 +1,208 @@
 # Social Content Engine
 
-**个人风格蒸馏 · 观点思考与内容创作 · Crypto Twitter 热点**
+**账号定位 · 个人风格蒸馏 · 深度观点 · Research · X 内容创作 · CT Radar**
 
-**Voice Distillation · Thinking Partner & X Writing · On-Demand CT Radar**
+**Account Positioning · Voice Distillation · Insight Expansion · Research · X Writing · Crypto Twitter Radar**
 
-[中文](#中文) · [English](#english)
+[中文](#中文) · [English](#english) · [MIT License](LICENSE)
 
 ---
 
 ## 中文
 
-**从一个简单想法，到真正有自己风格的 X 内容。**
+**你提供一个想法，Skill 帮你把它想得更深、查得更实在，再写成真正像你自己的内容。**
 
-Social Content Engine 是一款免费开源的 Claude Code Skill，包含三个核心能力：**个人风格蒸馏、观点思考与内容创作、按需 Crypto Twitter 热点研究**。不只是把一句话润色得更漂亮，而是帮助你找到值得表达的观点、理清论证，再用自己的语言写出来。
+Social Content Engine 是免费的开源 Claude Code Skill。它不是把一句话拉长的 AI 文案生成器，而是一个兼顾**个人表达、内容判断和可信研究**的写作伙伴。主题不只限于 Crypto；CT Radar 则专门研究 Crypto Twitter 的真实讨论。
 
-### 0. Account Alignment｜先有账号定位，再有单条内容的角度
+### 1. 先对齐账号，再选择内容角度
 
-**内容从账号定位开始，不从格式模板开始。** Account Profile 是一个账号的编辑章程，记录它面向谁、提供什么独特价值、核心观点、确认的立场、词汇偏好和不能碰的红线；Voice Profile 才负责这个作者如何表达。两份档案分别维护。
+建立私有的 **Account Profile**（账号定位、受众、内容支柱、词汇、明确立场和红线），关联独立的 **Voice Profile**（你怎么写）。公司或项目账号可以设置 **approved-source register**，明确哪些官方资料被批准对外使用。
 
-**Account Profile 第一行先回答：这个账号什么格式赢？** 使用账号自己的历史数据比较 Article、Long Post、Short Post、Thread，明确统计区间、样本量、指标和中位数。不同账号、不同内容类别可以有不同答案。证据不足就写 UNKNOWN / TEST NEEDED，不默认短推或 Thread。Article 是完整长文章格式，有标题、章节和论证，不等于把一条推文拉长；发布需确认账号权限。
+**账号档案第一行回答：什么格式在这里真正有效？** 比较自己账号的历史数据，而不是默认短推或 Thread。支持 **Article、Long Post、Short Post、Thread**；Article 是有标题、章节、论证与来源的独立长文章，不是放大的短推。没有数据时写 `UNKNOWN`，不杜撰效果。若有个人号和官方号，可自定义谁首发观点/故事，谁首发教程/公告，避免重复转发。
 
-企业或项目账号可通过独立的 approved-source register 指向获准公开的官方资料、核验日期、负责人和适用范围。没有经过批准的来源就不声称功能、合作、数据和时间已经确认。私人账号档案和来源文件不会自动上传到这个 Public 仓库。
+### 2. Voice Distillation：让文字更像你
 
-如果用户同时管理个人号和官方号，可按需设置内容源头：**原创判断与真实故事从个人号首发，官方号注明来源并展开；教程、产品数据、合作和公告由官方号首发，个人号只在有新的独立观点时跟进**。这是可配置的建议，不是强制所有人都拥有两个账号。
+建议提供 **8–20 条自己写过的推文或文章**和你对 AI 草稿的修改记录。Skill 会提炼语气、开头、句式、论证方式、细节偏好与 **Humanity Fingerprint**：你经常从哪里发现问题、如何保留不确定性、讨厌哪些 AI 腔句子。参考作者只用于学习广义写作技巧，不照搬其独特表达。
 
-~~~text
+```text
 /social-content-engine
-先帮我做 Account Alignment：明确账号受众、核心视角、词汇、立场和红线。
-参考我授权提供的历史内容表现，先判断什么格式在这个账号有效。
-这里是获准使用的官方事实来源：[URL 或私有文件路径]
-如果有个人号和官方号，也帮我定义原创内容和引用的流向。
-样本不足请标明，不要替我编造定位、指标或已批准事实。
-~~~
+这是我自己写过的 10 条推文：[粘贴]
+请建立 Voice Profile 和 Humanity Fingerprint，找出哪些表达真正像我，
+并根据我的想法写一条校准推文。不要模仿参考作者。
+```
 
-### 1. Voice Distillation｜个人风格蒸馏
+个人档案和修改记录默认不写入公开仓库；持续保存前须征得本人同意。
 
-很多 AI 写出的推文看起来都很像。这个功能希望解决的是：**让内容更像你，而不是更像 AI。**
+### 3. 从一句笼统观点，发展出真正有信息量的内容
 
-首次使用时，建议提供 8–20 条自己写过的推文或文章。Skill 会从真实样本中分析你习惯的开头和收尾、语气、句子长短、论证方式、用词、幽默感以及不喜欢的表达，并整理成一份 **Voice Profile**。样本不足时也能先生成初步版本。
+输入可以很短，例如：「AI Agent 还没有真正的经济自主权。」
 
-你也可以提供喜欢的同行或参考作者，但 Skill 只借鉴他们的结构、节奏和论证技巧，不会照搬他们的独特措辞、经历或观点。
+**Idea Expansion** 会先区分作者已经认可的观点与 Skill 提议的方向，尝试挖掘**权力归属、责任分配、经济激励**等不同机制，找出反例、现实影响和需要核实的证据。它不再只把原话修饰成“不是 A，而是 B”。若你明确要求直接成稿，它仍会在当前对话给出草稿，不强制经过选择流程。
 
-~~~text
-/social-content-engine
-以下是我自己写的推文：[粘贴 8–20 条]
-以下是参考作者的内容：[可选，请单独标注]
+你可以选择这篇内容的表达方式（**Writing Mode**）：
 
-请分析我的写作习惯、语气、观点表达、句式和内容偏好，
-建立 Voice Profile，然后用我的一个观点写一条校准短推。
-不要复制参考作者的文字。
-~~~
-
-没有历史样本，也可以先生成内容，但会采用临时风格。你的个人档案不会自动上传公共仓库；持久保存需要你的明确同意。
-
-### 2. Thinking Partner + Content Creation｜观点思考与内容创作
-
-**只要有一个想法，不需要先写好完整稿件。** 可以输入一句话、几条零散观点、一段语音转写、新闻链接或已有草稿。
-
-Skill 会根据需要：
-- 找出你真正想说的判断，以及值得讨论的切入点；
-- 分析逻辑漏洞、可能的反驳与现实意义；
-- 在相关时查证最新新闻、数据及原始来源；
-- 保留你的立场和语气，形成自然且有内容的原创表达。
-
-支持的形式：
-
-| 形式 | 用途 |
+| 模式 | 风格和适用场景 |
 | --- | --- |
-| **Article（文章）** | 完整的 X 长文章：独立标题、章节结构、深入论证、案例与来源；适合研究、行业分析和系统性观点 |
-| Long Post（长帖） | 一条较长的 X 帖子，承载完整观点，但不采用独立 Article 的文章结构 |
-| Short Post（短推） | 单条简洁观察或判断 |
-| Thread（推文串） | 多条推文逐步推进同一个论证，每条都有新内容 |
-| Rewrite（改写） | 保留原意，把现有草稿改得更像本人 |
-| Angle Exploration（角度探索） | 先找出不同角度、检验观点，再决定写什么 |
+| **Professional｜专业分析** | 克制准确，适合行业、公司或产品分析 |
+| **Conversational｜轻松交流** | 像真实对话，适合个人观察和讨论 |
+| **Research-Driven｜研究驱动** | 方法、来源和不确定性清楚，适合深度 Article |
+| **Opinionated｜鲜明观点** | 有立场也考虑反驳，适合个人观点和 QRT |
+| **Builder's Notes｜实践笔记** | 从真实操作、约束与复盘出发，适合 Build in Public |
 
-**一句话变短推：**
+**Writing Mode 只是本次表达方式，不会覆盖账号定位或作者原本的观点。** 没有指定时，Skill 会根据账号和内容推荐一种，并仅在确实有必要时询问。
 
-~~~text
+### 4. 可选 Research：不只是“贴几个链接”
+
+研究深度独立于表达风格，例如你可以用 **轻松交流 + R2 深度研究 + Article**。
+
+| 深度 | 会做什么 |
+| --- | --- |
+| **R0 · Original Thinking** | 基于你的想法推理，不进行额外的广泛研究；重要事实仍需核实或注明不确定 |
+| **R1 · Evidence Supported** | 尝试查证 1–3 条有价值的支持或反驳证据 |
+| **R2 · Deep Research** | 多来源交叉核验，追溯原始数据、机制、反例和方法局限 |
+
+**Information Gap Mining** 会尝试找真正值得注意的细节：合约权限、激励机制、实际使用与叙事落差、数据定义等。每个重要发现会关联来源、时间和可信状态；不因为“看起来少人知道”就宣称 CT 都没注意到。**Research 只有在实际访问并检查来源后，才会被标为已完成。**
+
+### 5. 日常怎么用？
+
+**简短想法 → 更丰富的观点 → 写作：**
+
+```text
 /social-content-engine
-我的想法：很多 AI Agent 仍然只是执行人的指令，
-但这不等于真正的经济自主权。
+我的观点：AI Agent 还没有真正的经济自主权。
+请先提出三个不同的潜在分析角度，指出各自的机制、反例和信息缺口。
+我倾向 Research-Driven，但希望文字自然。Research 使用 R1。
+推荐最有价值的方向，做必要的来源核实，再写成一篇英文 Article。
+不要编造我亲身做过的事，也不要把建议的角度当成我认同的结论。
+```
 
-帮我找到最有意思的切入角度，指出逻辑上的薄弱处，
-再按我的个人风格写成一条英文短推。
-不要营销腔，也不要替我编造事实。
-~~~
+**有人味的改写：**
 
-**写一篇完整 Article：**
-
-~~~text
+```text
 /social-content-engine
-我想写一篇英文 X Article，主题是：[你的观点 / 研究方向]。
-先根据我的 Account Profile、历史格式表现与目标受众，确认 Article 是否适合这次内容。
-使用我的 Voice Profile 来写，而不是套用通用营销文章格式。
+这篇草稿太像 AI，请按我的 Voice Profile 做 Human Voice Editor：
+保留真实观点，删除套路对比句和无信息量的开头；
+指出内容本身缺少什么机制或事实。不要凭空加入个人经历。
+```
 
-请先帮我明确核心论点、找出证据不足的地方、提出可能的反驳，
-再写出完整的文章：有标题、自然的章节结构、深入分析、必要的案例和来源，
-以及真正推进观点的结尾。不要为了凑字数重复论述。
+**当天 CT 热点（仅按需，不自动运行）：**
 
-不要把 Article 强行压缩为 Long Post 或 Thread，也不要默认 300–1200 字符。
-涉及产品数据或合作事实时，只使用我账号 approved-source register 中确认过的资料。
-~~~
-
-**Article、Long Post、Thread 是三种不同形式。** 选择哪一种，要看账号本身的历史表现、这次内容的目标和论证深度。**Article 没有统一的默认字数限制**；篇幅由账号实际数据和内容需求决定。正式发布前，请确认账号具有对应的 X Article 权限。
-
-**把想法写成 Thread：**
-
-~~~text
+```text
 /social-content-engine
-我想讨论：[粘贴几个观点]
-先帮我梳理逻辑、寻找反驳、必要时查证事实，
-最后写成 5 条英文 Thread。每条都要推进论证，别重复。
-~~~
+今天 Crypto Twitter 上真正讨论的热点有哪些？
+只要 CT 相关的 Crypto 话题，给我最多 5–10 个有实际原帖证据的主题，
+包括 X 链接、时间、不同观点、值得追查的信息差和可以写的角度。
+```
 
-如果输出不够像你，直接反馈「这不是我的观点」「太像 AI」「我不会这样开头」。Skill 会先修改当前内容；你同意后才会把长期偏好更新到 Voice Profile。**主题不限 Crypto：AI、创业、市场、产品、技术、生活观察都可以。**
+如果当前环境没有可用的实时 X 搜索/合法来源，Skill 会说明限制，不会用普通新闻冒充 CT 热点，也不会自动登录、抓取账号或发推。
 
-### 3. Crypto Twitter Radar｜当天 CT 热点
+### 6. 安装（Claude Code）
 
-想知道今天 CT 正在讨论什么，**主动问一次就够了**。不需要配置定时任务，也不会自动运行。
+**直接使用：** 在 Claude Code 中打开本仓库，Skill 位于 `.claude/skills/social-content-engine/`。开启新的会话，输入 `/social-content-engine` 即可。
 
-~~~text
-/social-content-engine
-今天 Crypto Twitter 有什么热点？
-只要今天 X 上真实有人讨论的 Crypto 内容，给我 5–10 个重点。
-每个附 X 原帖、发布时间、争论内容、为什么重要、
-哪些信息尚未核实，以及一个原创写作角度。
-~~~
+**安装到个人目录（Mac / Linux）：**
 
-Skill 首先尝试当前环境可用的合法实时 X/网页搜索，寻找 BTC、ETH、DeFi、Meme、AI x Crypto、链上活动和安全事件等真实 CT 讨论。**有 X 原帖才算 CT 讨论信号**；只有新闻网站报道不能冒充热点。如果来源不足，结果可能少于 5 个，并明确说明局限。这不是 X 官方 Trending Topics 排名。
-
-已有合法 X API 公开搜索权限时，可选用只读 API 扩大采样，但这不是日常提问的前置条件。Skill 不会索取 X 密码或 Cookie，不自动登录或发推。
-
-### 4. 安装与开始
-
-最简单的方法：用 Claude Code 打开这个仓库。Skill 已在 .claude/skills/social-content-engine/，开始新会话即可使用 /social-content-engine。
-
-若要在其他本地项目中使用，Mac / Linux 可以执行：
-
-~~~bash
+```bash
 git clone https://github.com/caelynmoss/social-content-engine.git
 mkdir -p ~/.claude/skills
 cp -R social-content-engine/.claude/skills/social-content-engine ~/.claude/skills/
-~~~
+```
 
-Windows 可把同一文件夹复制到 %USERPROFILE%\.claude\skills\。确保文件夹内有 SKILL.md，并重新打开 Claude Code。
+Windows：复制整个 `.claude/skills/social-content-engine` 到 `%USERPROFILE%\.claude\skills\`，确保有 `SKILL.md`，重新开启 Claude Code。
 
-[中文详细使用指南](docs/SETUP_ZH.md) · [安全与隐私](docs/SECURITY.md) · [参与贡献](CONTRIBUTING.md)
+[中文详细说明](docs/SETUP_ZH.md) · [V5 评估方式](docs/V5_EVALUATION.md) · [隐私与安全](docs/SECURITY.md)
 
 ---
 
 ## English
 
-**From a rough idea to an X post that actually sounds like you.**
+**Bring a rough idea. Develop a real insight, check what matters, then write something that sounds like you.**
 
-Social Content Engine is a free, open-source Claude Code skill with three core abilities: **personal voice distillation, thinking and content creation, and on-demand Crypto Twitter research**. It doesn't just polish sentences; it helps you find an argument worth making and express it in your own words.
+Social Content Engine is a free, open-source Claude Code Skill combining **account positioning, personal voice, editorial thinking, evidence-backed research, writing, and on-demand Crypto Twitter discovery**. Its writing topics are unrestricted; the CT Radar covers genuine crypto discussions on X only.
 
-### 0. Account Alignment | Position first, angle second
+### 1. Account before content
 
-**Start with the account's editorial identity, not a platform template.** Keep an Account Profile for audience promise, core lens, explicit stances, vocabulary, red lines and approved facts, linked to a separate Voice Profile for how the author writes.
+Use a private **Account Profile** for editorial positioning, audience, vocabulary, approved stances, red lines, format evidence and an approved-source register for official claims. Keep a separate **Voice Profile** for how the author writes.
 
-**First line of the Account Profile: What format wins here?** Compare this account's original Articles, long single posts, short posts and threads using its own measured results, sample sizes, dates, medians and goals. Do not presume short posts or threads win. An Article is a first-class long-form draft with sections and evidence, not a padded tweet. Eligibility to publish native X Articles must be checked. If the data is weak, record UNKNOWN / TEST NEEDED.
+The first line should say **what format actually works for this account**, based on its real post performance, or `UNKNOWN`. Support **Article, Long Post, Short Post and Thread** as distinct formats. An Article is a full original piece with a title, sections, argument and sources—not a padded tweet. Personal and official accounts can specify original-content routing to avoid duplicative reposts.
 
-Approved company facts need a location: a private approved-source register with real authorized URLs or file paths, verification dates, signoff and permitted claim scope. Never treat an unapproved product claim as a fact. Personal profiles and private sources remain outside the public repository.
+### 2. Voice Distillation and the Humanity Fingerprint
 
-If personal and official accounts are linked, an optional routing model is: original views and firsthand stories start with the person, while the official account can cite and expand; verified tutorials, data, releases and partnerships originate with the official account, with personal follow-up only when it adds a distinct view. This is configurable, never a forced workflow or auto-post.
+Share **8–20 authentic posts** you wrote and, optionally, edits to earlier AI drafts. The Skill learns your structure, rhythm, reasoning, humor, uncertainty and the expressions you routinely remove. Peer creators only supply general writing craft, never their distinctive language or opinions.
 
-~~~text
+```text
 /social-content-engine
-Align this account's positioning before drafting: audience, point of view, vocabulary,
-confirmed stances and red lines. Compare my authorized past results by format.
-Place the winning format (or UNKNOWN) on line one of the Account Profile.
-Here are my approved organizational sources: [URLs or private paths].
-If I manage linked personal/official accounts, define who originates which content.
-~~~
-### 1. Voice Distillation
+Here are 10 posts written by me: [paste]
+Build my Voice Profile and Humanity Fingerprint from real samples.
+Write one calibration post. Don't imitate reference creators.
+```
 
-AI-written posts often sound the same. This feature aims to make your writing sound **more like you, not more like AI**.
+Private profiles are never saved persistently or uploaded to public GitHub without your permission.
 
-Share 8–20 posts or articles you wrote yourself. The skill identifies your opening and closing habits, tone, sentence rhythm, reasoning patterns, vocabulary, humor, and writing preferences, then builds a **Voice Profile**. Fewer samples can produce a provisional profile.
+### 3. Adaptive Idea Expansion + five Writing Modes
 
-You may also provide writers you admire, separately identified as references. Their work contributes high-level writing techniques, not copied distinctive lines, experiences, or opinions.
+Short input no longer means shallow output. **Idea Expansion** tests mechanisms, counterexamples, practical stakes and evidence gaps, proposing **2–3 genuinely different potential angles** without pretending that the user already believes them. An explicit “just draft it” still gets a useful draft immediately.
 
-~~~text
-/social-content-engine
-Here are posts I wrote: [paste 8–20 samples]
-Here are reference writers: [optional, clearly separate]
-
-Analyze my tone, rhythm, argument style, openings and editorial preferences.
-Build my Voice Profile and write one calibration post based on my own idea.
-Don't copy the reference writers.
-~~~
-
-No samples? You can still write right away in a provisional voice. Private profiles are not automatically uploaded to GitHub or saved persistently without your permission.
-
-### 2. Thinking Partner + Content Creation
-
-**Start with one sentence, not a polished draft.** Bring rough notes, a voice-note transcript, a link, or something you have already written.
-
-The skill can:
-- Clarify your actual thesis and find stronger, genuinely different angles;
-- Challenge weak reasoning and identify fair counterarguments;
-- Check recent news and relevant evidence when useful;
-- Turn the result into original copy that preserves your voice and position.
-
-| Format | What it's for |
+| Mode | Best for |
 | --- | --- |
-| **Article** | A full native X article with a title, sections, sustained argument, examples and sources; suited to deep research and analysis |
-| Long Post | One longer X post that develops a point without becoming a standalone article |
-| Short Post | One concise observation or argument |
-| Thread | A sequence of posts that progressively develops an argument, with a distinct contribution in each post |
-| Rewrite | Improve a draft without changing what you mean |
-| Angle Exploration | Compare distinct angles before you start writing |
+| **Professional** | Precise, restrained sector or institutional analysis |
+| **Conversational** | Real, natural personal observations and discussion |
+| **Research-Driven** | Method-aware, evidence-rich explanations and Articles |
+| **Opinionated** | Sharp, defensible takes without manufactured outrage |
+| **Builder's Notes** | Documented implementation trade-offs and learnings |
 
-**One thought → one post:**
+The mode describes **this piece**, not the writer's personality or research effort. It remains separate from the output format and research depth.
 
-~~~text
+### 4. Optional R0 / R1 / R2 research + Information Gap Mining
+
+- **R0 · Original Thinking:** No extra broad research; material factual claims still need verification or qualification.
+- **R1 · Evidence Supported:** Seek 1–3 relevant, trustworthy findings that strengthen or challenge the thesis.
+- **R2 · Deep Research:** Triangulate primary evidence, dated background, data definitions, counterevidence and limitations.
+
+**Information Gap Mining** seeks details that change a real reader's decision, such as onchain authority, liquidity control, incentives or discrepancies between usage and narrative. Keep an **Evidence Ledger** that distinguishes verified evidence, source claims, disputes, hypotheses and author interpretation. Never label something “ignored by CT” without sampling relevant X discussion, and never claim to have researched sources that were inaccessible.
+
+### 5. Try it
+
+**From one sentence to a sourced Article:**
+
+```text
 /social-content-engine
-My thought: Many AI agents still follow human instructions,
-but that does not automatically make them economically autonomous.
+My idea: AI agents may not yet have meaningful economic autonomy.
+Find three materially different possible angles with mechanisms and counterexamples.
+Use Research-Driven prose with R1 evidence support and recommend the strongest angle.
+Then write a substantial English Article in my voice. Don't manufacture my experiences
+or treat your suggested angle as my pre-existing belief.
+```
 
-Find the most interesting angle, challenge weak assumptions,
-then write one short English X post in my voice.
-No marketing filler or invented facts.
-~~~
+**Human-sounding revision:**
 
-**Write a full Article:**
-
-~~~text
+```text
 /social-content-engine
-I want to write an English X Article about: [your thesis or research topic].
-First check my Account Profile, audience and historical format performance
-to decide whether Article is the right choice for this piece.
-Apply my Voice Profile rather than a generic marketing-blog voice.
+This draft reads like AI. Use my Voice Profile to edit out generic hooks,
+formulaic contrasts and filler. Keep my actual viewpoint and identify missing facts.
+Never invent a first-person story.
+```
 
-Clarify the thesis, identify evidence gaps and fair counterarguments,
-then draft a complete Article with a compelling title, natural sections,
-substantive analysis, relevant examples, source notes and a meaningful conclusion.
-Don't add filler just to make it longer.
+**On-demand CT radar:**
 
-Do not force this into a Long Post or Thread, or impose a default 300–1200 character limit.
-For company or product claims, use only approved sources from my account's source register.
-~~~
-
-**Article, Long Post and Thread are distinct formats.** Choose based on this account's real performance, the communication goal and the depth of reasoning—not platform defaults. An **Article has no arbitrary default character limit** in this Skill; adapt length to the evidence and the work. Verify native X Article publishing eligibility for the account.
-
-**One argument → a thread:**
-
-~~~text
+```text
 /social-content-engine
-Here's my rough take: [your notes]
-Help me organize the logic, consider objections, and check facts if useful.
-Then make it a 5-post English thread where each post advances the argument.
-~~~
+What are today's Crypto Twitter hotspots? Find up to 5–10 crypto conversations
+with real dated X post links, independent viewpoints and possible information gaps.
+```
 
-Feedback such as “That's not my opinion,” “too generic,” or “I wouldn't open this way” improves the current draft. Lasting changes to your Voice Profile require permission. **Any topic is welcome**, not just crypto or AI.
+There is **no scheduled or automatic radar**. This is not X's official Trending Topics list (not X Trending Topics ranking); the Skill never performs browser login. No X web automation is performed. Search access may be limited; it reports missing original X evidence rather than inventing trends.
 
-### 3. On-Demand Crypto Twitter Radar
+### 6. Install with Claude Code
 
-Want to know what CT is discussing today? **Just ask.** There is no recurring background task.
+Open this repository in Claude Code, then use `/social-content-engine`. For use across projects on Mac/Linux:
 
-~~~text
-/social-content-engine
-What are today's Crypto Twitter hotspots?
-Give me 5–10 topics genuinely being discussed on X today.
-For each, include original X post links, posting times, key debates,
-why it matters, unverified claims and an original writing angle.
-~~~
-
-The skill tries available authorized live X/web search first, across BTC, ETH, DeFi, memes, AI x Crypto, onchain activity, security and other crypto discussions. **A real X source is required**; generic news coverage alone does not prove a Crypto Twitter hotspot. When access is limited, the skill reports fewer topics rather than inventing posts. This is **not X's official Trending Topics** list (not X Trending Topics rankings).
-
-A read-only official X API is optional for people who already have permitted public search access. The skill never performs browser login, collects passwords or cookies, runs scheduled data collection, or auto-posts.
-
-### 4. Install and get started
-
-The easiest option: open this repository in Claude Code. The skill is already under .claude/skills/social-content-engine/. Start a new session and call /social-content-engine.
-
-To install across local projects on Mac / Linux:
-
-~~~bash
+```bash
 git clone https://github.com/caelynmoss/social-content-engine.git
 mkdir -p ~/.claude/skills
 cp -R social-content-engine/.claude/skills/social-content-engine ~/.claude/skills/
-~~~
+```
 
-On Windows, copy the same folder to %USERPROFILE%\.claude\skills\. Check that SKILL.md is present and restart Claude Code.
+On Windows copy `.claude/skills/social-content-engine` to `%USERPROFILE%\.claude\skills\`, then restart Claude Code.
 
-[English setup guide](docs/SETUP_EN.md) · [Security](docs/SECURITY.md) · [Contributing](CONTRIBUTING.md)
-
-[MIT License](LICENSE)
+[English setup](docs/SETUP_EN.md) · [V5 evaluation](docs/V5_EVALUATION.md) · [Security](docs/SECURITY.md) · [MIT License](LICENSE)

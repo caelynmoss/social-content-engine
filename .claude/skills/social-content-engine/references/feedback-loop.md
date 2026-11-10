@@ -2,6 +2,8 @@
 
 **Priority of signals:** user's explicit instruction now > their final edited draft > feedback from the same author on previous drafts > supported own-post patterns > peer techniques. The source should be preserved so a speculative style preference is not treated as confirmed.
 
+**New: distinguish Human Voice failures from thin reasoning or missing information. See `references/human-voice-editor.md` and `references/editorial-memory.md`; any durable rule requires explicit approval and private storage.**
+
 ## Four-way comparison after a revision
 
 If the user provides (1) your proposed text and (2) what they actually posted, compare:
