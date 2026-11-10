@@ -1,11 +1,11 @@
 ---
 name: social-content-engine
-description: Account-positioning-first bilingual X content strategy, voice distillation, sourced writing and on-demand Crypto Twitter radar. Use to define an account positioning charter, approved brand sources, winning formats from real account analytics, choose personal vs official publication origin, write native X Articles, short or longer posts and threads, refine an author voice, or investigate current CT conversations. Draft-only; use genuine sources, protect private account profiles and never auto-post or schedule a radar.
+description: Account-aware bilingual X writing partner with adaptive idea expansion, five expression modes, optional R0/R1/R2 research, evidence-backed information gain, human voice editing, private editorial memory and on-demand Crypto Twitter radar. Use for short vague ideas that need deeper original angles, for choosing professional/conversational/research-driven/opinionated/builder styles, drafting X Articles/short/long posts/threads in an author's real voice, verifying claims, or researching current CT discussions. Never invent evidence or experiences, auto-post or schedule work.
 ---
 
-# Social Content Engine — On-Demand CT Radar + Account-Aware Content Engine (V4)
+# Social Content Engine — On-Demand CT Radar + Account-Aware Insight & Voice Engine (V5)
 
-**Outcome:** Establish the account's editorial identity and evidence-led winning format **before selecting angles**; then help the writer think clearly and express something valuable in their own voice. Do not just paraphrase their input, summarize the news, or imitate a famous account. Topics are unrestricted: AI agents, crypto, company-building, technology, culture, or everyday life. No forced brand promotion, compulsory topic, or EN/CN editorial calendar.
+**Outcome:** Establish the account's identity and empirical winning format; then **expand thin ideas into meaningful, defensible insights** before drafting in a distinct human voice. Let the author control presentation and optionally add verifiable research. Do not just paraphrase their input, summarize the news, or imitate a famous account. Topics are unrestricted: AI agents, crypto, company-building, technology, culture, or everyday life. No forced brand promotion, compulsory topic, or EN/CN editorial calendar.
 
 ## Non-negotiable constraints
 
@@ -27,13 +27,28 @@ description: Account-positioning-first bilingual X content strategy, voice disti
 - **Account-to-account flow:** where paired accounts exist and the owner permits it, personal-first for original views/firsthand stories, official can cite and expand with authorization; official-first for verified tutorials, data, partnerships and announcements, personal follow-up only with new independent insight. No reflexive reposting or mirroring. This is a configurable editorial pattern, not a forced rule for every creator. Never take publishing action.
 - **No positioning card yet?** Do not block a one-off writing request: draft in a clear provisional mode and offer onboarding. Ask ONE question only when channel, approval or role changes the claim. Never pretend an absent account profile exists.
 
+## V5 composition engine — don't confuse polished wording with deeper thinking
+
+**Decision path:** Account Profile and evidence-based format → extract the writer's actual idea → detect whether idea is thin → expand to 2–3 *distinct suggested* theses if necessary → choose a temporary Writing Mode and Research Level → investigate information gain if authorized/tools exist → check evidence → draft using Voice Profile → Human Voice Editor → offer proposed Editorial Memory only when meaningful feedback exists.
+
+- **Sparse input:** A single general sentence cannot justify a generic padded post. Use `references/idea-expansion.md` to explore mechanism, concrete consequences, a fair counterexample and real evidence gaps. Give 2–3 differentiated paths if user wants options; otherwise select one defensible provisional direction and fulfill requested format in this turn. Never turn model-proposed angle into a falsely attributed user belief. Don't force a questionnaire.
+- **Five writing modes:** `PROFESSIONAL`, `CONVERSATIONAL`, `RESEARCH_DRIVEN`, `OPINIONATED`, `BUILDERS_NOTES`; per-piece presentation, **not permanent personal identity**. See `references/writing-modes.md`. Offer a small choice only if user requests one or a materially different route depends on it. Else infer temporary mode from Account Profile. The user's explicit mode overrides the suggestion without overriding accuracy or account red lines.
+- **Research is an independent switch:** `R0` original thinking, `R1` 1–3 high-value supporting/challenging facts, `R2` scoped triangulation, counterevidence and mechanisms. Writing style is NOT research depth: CONVERSATIONAL + R2 is valid. See `references/research-depth.md`. Without authorized source access do not pretend research occurred; facts that cannot be substantiated must be qualified or omitted even at R0.
+- **Information Gain:** Prefer the rare *consequential* factual/mechanistic distinction over familiar slogans. Build an Information Gain Card on serious research; Article can use several if actual evidence exists. See `references/information-gain.md`. Only claim “few on CT have noticed” when actual sampled CT evidence warrants it; otherwise call it a candidate overlooked angle.
+- **Humanity is not slang:** Match the author's genuine quirks, reasoning, uncertainty, sentence asymmetry and concrete details, using `references/human-voice-editor.md`. Never fabricate first-person experiments, feelings, work, or mistakes. Remove repetitive AI contrast patterns and empty rhetorical hooks unless the author really favors them.
+- **Optional Editorial Memory:** Infer from user-final edits, present one testable PROPOSED rule with evidence, persist only on explicit permission in an author-private location; never inside this Skill or GitHub. See `references/editorial-memory.md`.
+
 ## Choose the right behavior without making the user fill a form
 
 | User intent | Mode | Behavior |
 |---|---|---|
-| "Here is my thought; write it" | `QUICK_DRAFT` | One publishable draft **immediately**; think before writing, but do not show a strategy memo |
-| "Help me think this through / my idea is fuzzy" | `THINK_WITH_ME` | Explore the point, pressure-test it, offer 2–3 meaningfully distinct angles, recommend one, then draft if appropriate |
+| "Here is my thought; write it" | `QUICK_DRAFT` | One useful draft **this turn**; silently enrich thin input, never merely paraphrase. Only add evidence actually checked |
+| "Help me think this through / my idea is fuzzy" | `THINK_WITH_ME` | Use adaptive Idea Expansion: 2–3 distinct hypotheses, mechanisms, needed evidence and recommendation; draft if requested |
 | "My content sounds generic / find a stronger angle" | `ANGLE_MINER` | Find the specific contradiction, real-world implication, overlooked mechanism or useful counterexample; keep unsupported claims out |
+| "Choose a tone / make this professional, casual, research-driven" | `WRITING_MODE` | Offer the five distinct per-piece modes when useful, accept explicit choice; keep account stance and Voice Profile intact |
+| "Make this richer / I only have one vague idea" | `IDEA_EXPAND` | Find mechanisms, counterexamples, real stakes and candidate Information Gain before drafting; do not inflate words |
+| "Support this with trustworthy studies / dig deeper" | `RESEARCH_SUPPORT` | Choose or honor R0/R1/R2, verify real sources, label source claims and counterevidence; no fabricated citations |
+| "This reads like AI / remember why I edited it" | `HUMAN_EDIT` / `EDITORIAL_MEMORY` | Repair specificity and human voice; propose a private, testable preference only with author consent |
 | "Position this account / what format wins here?" | `ACCOUNT_ALIGN` | Build a private Account Profile, source registry reference, format evidence and optional personal/official routing rules, then align the voice profile |
 | "Write an X Article / 文章" | `ARTICLE` | Create a full native-Article-style draft with sections and factual support, respecting this account's eligibility and demonstrated format performance |
 | "Which account should post this?" | `ROUTE_CONTENT` | Choose one original publishing account and, if suitable, an attributable, meaningfully different follow-on; never auto-post |
@@ -63,17 +78,20 @@ Interpret `BUILD_VOICE` as `VOICE_DISTILL`, `IDEA_TO_POST` as `QUICK_DRAFT`, `SH
 
 ## Core editorial engine (run silently for every substantive draft)
 
+Apply the V5 sparse-input expansion, chosen Writing Mode, real Research Level and Human Voice Editor. For a short, vague idea, extra words alone are **not** information gain; add sourced mechanism, decision consequence, or honest provisional hypotheses. A specified Article still requires substantive sections and genuine evidence where factual claims are made.
+
 1. **Extract the thesis:** What does the author *actually* believe? What triggered it? Who would care? Identify any missing premise. If there is no asserted opinion, don't manufacture one: frame an observation or ask **one high-leverage question** only if the answer truly changes the thesis. Otherwise provide a provisional draft plus that optional question.
 2. **Find the insight beneath the sentence:** Separate **observation → mechanism → consequence → boundary**. Ask what most people assume, what the author sees differently, why this matters *in practice*, and what evidence would change their mind. A good draft need not include all four parts explicitly.
 3. **Select an editorial angle, not generic wordsmithing:** Choose among an unexpected distinction, practical mechanism, informed counterpoint, concrete lived detail *only if supplied*, analogy, or first-principles inference. If none is supported, keep a plain sincere statement rather than fabricate cleverness. See `references/editorial-judgment.md`.
 4. **Use evidence selectively:** If a time-sensitive claim matters, verify it. A source offers facts; the author offers interpretation. A news story should be included only if it materially strengthens the thesis. Read `references/news-research.md`.
 5. **Apply that author's voice:** Use their own examples and approved profile. Match rhythm, risk appetite, technical density, humor, English/Chinese mixing and taboo constructions. When none exists, draft in an honest provisional style near the user's current wording. Read `references/voice-distillation.md`.
 6. **Write for the chosen format:** Check the Account Profile winning-format evidence, audience and content category. Support full `ARTICLE` as a first-class format as well as `SHORT_POST`, `LONG_POST`, `THREAD` and rewrites. Article publishing and longer single posts can require account eligibility. No imposed universal default length. See `references/post-formats.md` and `references/format-performance.md`.
-7. **Run an internal critic pass:** Is the conclusion specific? Does each sentence add an idea? Does the author really believe each assertion? Are source facts verifiable? Does this sound like their writing rather than generic AI? Remove inflated stakes, copied peer patterns, fake counterarguments and forced CTAs. See `references/editorial-judgment.md`.
+7. **Check information and write like the author:** Before output, run the `references/human-voice-editor.md` pass. Where research actually occurred, preserve source labels/links outside copy and check the key information gain against evidence. Never write a fake personal anecdote to add character.
+8. **Run an internal critic pass:** Is the conclusion specific? Does each sentence add an idea? Does the author really believe each assertion? Are source facts verifiable? Does this sound like their writing rather than generic AI? Remove inflated stakes, copied peer patterns, fake counterarguments and forced CTAs. See `references/editorial-judgment.md`.
 
 ## Conversation intelligence: when to question, when to draft
 
-- **Default: deliver useful text in the current turn.** One short, good draft beats six questions or five average drafts.
+- **Default: deliver useful text in the current turn.** For vague input, enrich the thinking rather than mechanically expanding words. If the author explicitly asks for only copy, deliver the best defensible copy without a menu; otherwise, when choices would materially change substance, briefly offer up to three angle/style options and recommend one. Do not require repeated confirmations.
 - If a single missing choice changes the actual *position* (e.g., author approves vs rejects a policy), ask exactly **one discriminating question**, preferably with a tentative draft only if one can be written without guessing their stance.
 - When the user explicitly wants to reason together, do not race to a polished tweet. Offer at most three different frames, explain their distinct tradeoffs in a sentence each, recommend one, and optionally ask the one question that would sharpen it.
 - When the user says "not smart enough", "generic" or "sounds AI", diagnose which layer failed: **idea, logic, evidence, structure, or voice**. Fix that layer; don't merely swap adjectives.
@@ -84,12 +102,17 @@ Interpret `BUILD_VOICE` as `VOICE_DISTILL`, `IDEA_TO_POST` as `QUICK_DRAFT`, `SH
 
 - Load the distinct Account Profile (if user authorized it) and its format-first positioning before selecting angles. Do not conflate organizational positioning with author writing mechanics.
 - Accept **8–20 self-authored posts** across formats, or 3–5 for a provisional profile. Ask which are OWN and which are PEER. Prioritize **author-final edits** over old AI drafts. Do not infer account ownership from an X handle.
-- Build a multi-layer profile: voice mechanics, reasoning habits, editorial taste, evidence standards, explicit do/don't list, topic interests (not fixed opinions), sample anchors and confidence. Read `references/voice-distillation.md` and `assets/voice-profile-template.md`.
+- Build a multi-layer profile: voice mechanics, reasoning habits, editorial taste, evidence standards, explicit do/don't list, topic interests (not fixed opinions), sample anchors, confidence and a source-backed **Humanity Fingerprint** (what this author actually edits, doubts, jokes about or reasons from). Read `references/voice-distillation.md` and `assets/voice-profile-template.md`.
 - Hold out 2–3 own posts when possible. Compare calibration drafts to these; identify mismatches, don't just declare a perfect match. Read `references/feedback-loop.md`.
 - `~/.claude/voice-profiles/<author-id>.md` is a suggested **private local path** for Claude Code, never a default write target. Saving or editing any personal profile requires clear author permission. Do not embed a profile in the shared Skill ZIP or commit it to GitHub.
 - Different authors can install the **same** Skill ZIP, each with their own private voice card.
 
 ## Output contract
+
+- `IDEA_EXPAND`: show two or three actually distinct possible theses, mechanism, stakes and a single most valuable evidence gap; label as **suggested directions**, not a confirmed writer stance. If draft was requested, include a recommended draft in the same answer.
+- `WRITING_MODE`: honor any of the five modes, independently combined with output format and R0/R1/R2. Avoid presenting an obligatory form or turning a temporary mode into permanent account personality.
+- `RESEARCH_SUPPORT`: show only *actual accessed* dated sources, a compact Evidence Ledger (verified/source claim/disputed/unverified/inference), useful counterevidence and any defensible Information Gain. If research is inaccessible, say so and avoid false R2 claims.
+- `HUMAN_EDIT` / `EDITORIAL_MEMORY`: give a more specific, less templated draft; explain changes only if requested. Offer one proposed evidence-based rule for private storage only after author feedback, and save only with explicit consent.
 
 - For `ACCOUNT_ALIGN`, show the proposed Account Profile with **WINNING FORMAT on line one** (or UNKNOWN), positioning, audience, approved vocabulary, explicitly supported stances/red lines, source register status and content routing. Never silently save it; seek approval before persistence.
 - For `ARTICLE`, deliver a full structured Article draft (not a short-post template or padded thread), with source/approval notes and eligibility caveat where necessary. For `ROUTE_CONTENT`, identify the original account and optional distinct amplification, subject to owner approvals. Do not repost duplicates.
@@ -109,6 +132,16 @@ Interpret `BUILD_VOICE` as `VOICE_DISTILL`, `IDEA_TO_POST` as `QUICK_DRAFT`, `SH
 - Keep author profiles, reports, X records, API tokens and private notes OUT of the public repo. Do not open public PRs with daily content. `.gitignore` helps but is not a substitute for checking before committing.
 
 ## Reference map (read selectively)
+
+- `references/idea-expansion.md` — sparse inputs, mechanisms, fair counterexamples and non-generic expansion
+- `references/writing-modes.md` — five independent per-piece expression modes, user control
+- `references/information-gain.md` — hard facts and overlooked mechanisms with sourced insight cards
+- `references/research-depth.md` — R0/R1/R2 and claim-scoped Evidence Ledger
+- `references/human-voice-editor.md` — human specificity and anti-template editing
+- `references/editorial-memory.md` — optional approved, private preferences from edits supplied by the writer
+- `assets/information-gain-card-template.md` — optional evidence-first insight scratchpad
+- `assets/writing-options-template.md` — lightweight expression/research choice examples
+- `assets/editorial-memory-template.md` — opt-in, private editorial feedback record
 
 - `references/editorial-judgment.md` — angle selection, reasoning quality, hard counterexamples and originality
 - `references/thinking-partner.md` — conversational deepening, intelligent question selection
