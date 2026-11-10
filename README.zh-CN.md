@@ -1,4 +1,4 @@
-# Social Content Engine — 中文使用说明
+# Your AI Writing Partner — 中文使用说明
 
 [中英双语 README](README.md) · [中文安装指南](docs/SETUP_ZH.md)
 
@@ -6,7 +6,7 @@
 
 **一个粗糙的想法，也值得写成有自己观点、有新信息、有人味的内容。**
 
-Social Content Engine V5 是一个免费开源的 Claude Code Skill。你可以给它一句想法、几条笔记、一篇草稿，或一个想研究的话题。它会帮助你**理清观点 → 挖掘角度和信息差 → 按需核查证据 → 用自己的语气创作**，而不是只把原句写长、写漂亮。
+Your AI Writing Partner 是一个免费开源的 Claude Code Skill。你可以给它一句想法、几条笔记、一篇草稿，或一个想研究的话题。它会帮助你**理清观点 → 挖掘角度和信息差 → 按需核查证据 → 用自己的语气创作**，而不是只把原句写长、写漂亮。
 
 适合个人创作者、研究者、Builder，也能用于有明确定位和事实审批要求的官方账号。**写作主题不限于 Crypto；只有 CT Radar 专门关注 Crypto Twitter。**
 

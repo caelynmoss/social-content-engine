@@ -1,6 +1,4 @@
-# Social Content Engine
-
-**V5 · Insight & Voice Engine**
+# Your AI Writing Partner
 
 **从一个想法，到有信息量、有个人判断、真正像自己写的内容。**
 
@@ -14,7 +12,7 @@
 
 **一个粗糙的想法，也值得写成有自己观点、有新信息、有人味的内容。**
 
-Social Content Engine V5 是一个免费开源的 Claude Code Skill。你可以给它一句想法、几条笔记、一篇草稿，或一个想研究的话题。它会帮助你**理清观点 → 挖掘角度和信息差 → 按需核查证据 → 用自己的语气创作**，而不是只把原句写长、写漂亮。
+Your AI Writing Partner 是一个免费开源的 Claude Code Skill。你可以给它一句想法、几条笔记、一篇草稿，或一个想研究的话题。它会帮助你**理清观点 → 挖掘角度和信息差 → 按需核查证据 → 用自己的语气创作**，而不是只把原句写长、写漂亮。
 
 适合个人创作者、研究者、Builder，也能用于有明确定位和事实审批要求的官方账号。**写作主题不限于 Crypto；只有 CT Radar 专门关注 Crypto Twitter。**
 
@@ -192,7 +190,7 @@ CT Radar **仅在你主动请求时运行**，不会自动登录 X、定时采�
 
 **Bring one rough idea. Build a stronger argument, find real information, and write in your own voice.**
 
-Social Content Engine V5 is a free, open-source Claude Code Skill. Give it one sentence, notes, a draft, or a question worth investigating. It helps you **develop the thesis → discover worthwhile angles and evidence gaps → verify what you can → draft in your voice**, rather than simply making a sentence longer.
+Your AI Writing Partner is a free, open-source Claude Code Skill. Give it one sentence, notes, a draft, or a question worth investigating. It helps you **develop the thesis → discover worthwhile angles and evidence gaps → verify what you can → draft in your voice**, rather than simply making a sentence longer.
 
 It works for individual creators, builders, researchers and accounts with formal editorial rules. **Writing topics are unrestricted; only the CT Radar focuses specifically on Crypto Twitter.**
 
